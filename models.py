@@ -1,5 +1,5 @@
-from sqlalchemy import Column, Integer, String, ARRAY
-from database import Base
+from sqlalchemy import Column, Integer, String, JSON
+from config.database import Base
 
 class User(Base):
     __tablename__ = "users"
@@ -10,5 +10,5 @@ class User(Base):
     gender = Column(String)
     email = Column(String, unique=True, index=True)
     city = Column(String, index=True)
-    interests = Column(ARRAY(String))
+    interests = Column(JSON)
 
